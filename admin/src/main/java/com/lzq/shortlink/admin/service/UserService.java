@@ -1,9 +1,18 @@
 package com.lzq.shortlink.admin.service;
 
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.lzq.shortlink.admin.dao.entity.UserDO;
+import com.lzq.shortlink.admin.dto.resp.UserRespDTO;
+
 /**
- * @Author lzq
- * @Description
- * @DATE 2024/12/17下午1:45
+ * 用户接口层
  */
-public class UserService {
+public interface UserService extends IService<UserDO> {
+
+    /**
+     * 根据用户名查询用户信息
+     * @param username 用户名
+     * @return 用户返回实体
+     */
+    UserRespDTO getUserByUsername(String username);
 }
