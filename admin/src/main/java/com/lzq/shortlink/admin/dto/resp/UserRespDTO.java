@@ -1,5 +1,8 @@
 package com.lzq.shortlink.admin.dto.resp;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.lzq.shortlink.admin.common.serialize.IdCardDesensitizationSerializer;
+import com.lzq.shortlink.admin.common.serialize.PhoneDesensitizationSerializer;
 import lombok.Data;
 
 /**
@@ -25,9 +28,12 @@ public class UserRespDTO {
     /**
      * 手机号
      */
+    @JsonSerialize(using = PhoneDesensitizationSerializer.class)
     private String phone;
 
     /**
      * 邮箱
      */
+    @JsonSerialize(using = IdCardDesensitizationSerializer.class)
+    private String mail;
 }
