@@ -1,6 +1,9 @@
 package com.lzq.shortlink.admin.dao.entity;
+
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.lzq.shortlink.admin.common.database.BaseDO;
 import lombok.Data;
+
 /**
  * @Author lzq
  * @Description
@@ -8,7 +11,7 @@ import lombok.Data;
  */
 @Data
 @TableName("t_user")
-public class UserDO {
+public class UserDO extends BaseDO {
 
     /**
      * id
