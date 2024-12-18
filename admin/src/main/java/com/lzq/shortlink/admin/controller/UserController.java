@@ -51,7 +51,7 @@ public class UserController {
     }
 
     /**
-     * 新增用户
+     * 注册用户
      */
     @PostMapping("/api/short-link/admin/v1/user")
     public Result<Void> register(@RequestBody UserRegisterReqDTO requestParam){
