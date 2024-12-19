@@ -71,5 +71,11 @@ public class UserController {
         return Results.success();
     }
 
-    
+    /**
+     * 用户登录
+     */
+    public Result<UserLoginResqDTO> login(@RequestBody UserLoginReqDTO requestParam){
+        userService.login(requestParam);
+        return Results.success(null);
+    }
 }
