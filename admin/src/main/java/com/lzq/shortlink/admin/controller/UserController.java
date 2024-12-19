@@ -4,8 +4,11 @@ import cn.hutool.core.bean.BeanUtil;
 import com.lzq.shortlink.admin.common.convention.result.Result;
 import com.lzq.shortlink.admin.common.convention.result.Results;
 import com.lzq.shortlink.admin.common.enums.UserErrorCodeEnum;
+import com.lzq.shortlink.admin.dto.rep.UserLoginReqDTO;
 import com.lzq.shortlink.admin.dto.rep.UserRegisterReqDTO;
+import com.lzq.shortlink.admin.dto.rep.UserUpdateReqDTO;
 import com.lzq.shortlink.admin.dto.resp.UserActualRespDTO;
+import com.lzq.shortlink.admin.dto.resp.UserLoginResqDTO;
 import com.lzq.shortlink.admin.dto.resp.UserRespDTO;
 import com.lzq.shortlink.admin.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -58,4 +61,15 @@ public class UserController {
         userService.register(requestParam);
         return Results.success();
     }
+
+    /**
+     * 修改用户
+     */
+    @PutMapping("/api/short-link/admin/v1/user")
+    public Result<Void> update(@RequestBody UserUpdateReqDTO requestParam){
+        userService.update(requestParam);
+        return Results.success();
+    }
+
+    
 }
