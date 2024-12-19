@@ -1,9 +1,10 @@
 package com.lzq.shortlink.admin.service;
 
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.lzq.shortlink.admin.dao.entity.GroupDO;
+
 /**
- * @Author lzq
- * @Description
- * @DATE 2024/12/17下午1:44
+ * 短链接分组接口层
  */
-public class GroupService {
+public interface GroupService extends IService<GroupDO> {
 }
