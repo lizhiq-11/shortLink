@@ -1,0 +1,14 @@
+package com.lzq.shortlink.admin.dto.rep;
+
+import lombok.Data;
+
+/**
+ * 短链接分组创建参数
+ */
+@Data
+public class ShortLinkGroupSaveReqDTO {
+    /**
+     * 分组名称
+     */
+    private String name;
+}
