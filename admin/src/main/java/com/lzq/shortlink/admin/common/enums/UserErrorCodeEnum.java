@@ -7,6 +7,7 @@ import com.lzq.shortlink.admin.common.convention.errorcode.IErrorCode;
  * 用户错误码
  */
 public enum UserErrorCodeEnum implements IErrorCode {
+    USER_TOKEN_FAIL("A000200", "用户Token验证失败"),
 
     USER_NULL("B000200", "用户记录不存在"),
 
