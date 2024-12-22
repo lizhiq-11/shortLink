@@ -2,9 +2,9 @@ package com.lzq.shortlink.admin.controller;
 
 import com.lzq.shortlink.admin.common.convention.result.Result;
 import com.lzq.shortlink.admin.common.convention.result.Results;
-import com.lzq.shortlink.admin.dto.rep.ShortLinkGroupSaveReqDTO;
-import com.lzq.shortlink.admin.dto.rep.ShortLinkGroupSortReqDTO;
-import com.lzq.shortlink.admin.dto.rep.ShortLinkGroupUpdateReqDTO;
+import com.lzq.shortlink.admin.dto.req.ShortLinkGroupSaveReqDTO;
+import com.lzq.shortlink.admin.dto.req.ShortLinkGroupSortReqDTO;
+import com.lzq.shortlink.admin.dto.req.ShortLinkGroupUpdateReqDTO;
 import com.lzq.shortlink.admin.dto.resp.ShortLinkGroupRespDTO;
 import com.lzq.shortlink.admin.service.GroupService;
 import lombok.RequiredArgsConstructor;

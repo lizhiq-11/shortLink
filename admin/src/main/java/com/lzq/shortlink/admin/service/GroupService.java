@@ -2,8 +2,8 @@ package com.lzq.shortlink.admin.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.lzq.shortlink.admin.dao.entity.GroupDO;
-import com.lzq.shortlink.admin.dto.rep.ShortLinkGroupSortReqDTO;
-import com.lzq.shortlink.admin.dto.rep.ShortLinkGroupUpdateReqDTO;
+import com.lzq.shortlink.admin.dto.req.ShortLinkGroupSortReqDTO;
+import com.lzq.shortlink.admin.dto.req.ShortLinkGroupUpdateReqDTO;
 import com.lzq.shortlink.admin.dto.resp.ShortLinkGroupRespDTO;
 
 import java.util.List;

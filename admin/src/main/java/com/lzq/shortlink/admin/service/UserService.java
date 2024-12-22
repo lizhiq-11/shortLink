@@ -2,9 +2,9 @@ package com.lzq.shortlink.admin.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.lzq.shortlink.admin.dao.entity.UserDO;
-import com.lzq.shortlink.admin.dto.rep.UserLoginReqDTO;
-import com.lzq.shortlink.admin.dto.rep.UserRegisterReqDTO;
-import com.lzq.shortlink.admin.dto.rep.UserUpdateReqDTO;
+import com.lzq.shortlink.admin.dto.req.UserLoginReqDTO;
+import com.lzq.shortlink.admin.dto.req.UserRegisterReqDTO;
+import com.lzq.shortlink.admin.dto.req.UserUpdateReqDTO;
 import com.lzq.shortlink.admin.dto.resp.UserLoginRespDTO;
 import com.lzq.shortlink.admin.dto.resp.UserRespDTO;
 
