@@ -3,14 +3,21 @@ package com.lzq.shortlink.project.dao.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.lzq.shortlink.project.common.database.BaseDO;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@TableName("t_link")
+/**
+ * 短链接实体
+ */
 @Data
 @Builder
+@TableName("t_link")
+@NoArgsConstructor
+@AllArgsConstructor
 public class ShortLinkDO extends BaseDO {
 
     /**
@@ -49,19 +56,19 @@ public class ShortLinkDO extends BaseDO {
     private String gid;
 
     /**
-     * 启用标识 0：未启用 1：已启用
+     * 启用标识 0：启用 1：未启用
      */
-    private int enableStatus;
+    private Integer enableStatus;
 
     /**
-     * 创建类型 0：控制台 1：接口
+     * 创建类型 0：接口创建 1：控制台创建
      */
-    private int createdType;
+    private Integer createdType;
 
     /**
-     * 有效期类型 0：永久有效 1：用户自定义
+     * 有效期类型 0：永久有效 1：自定义
      */
-    private int validDateType;
+    private Integer validDateType;
 
     /**
      * 有效期
@@ -74,4 +81,46 @@ public class ShortLinkDO extends BaseDO {
     @TableField("`describe`")
     private String describe;
 
+    /**
+     * 网站标识
+     */
+    private String favicon;
+
+    /**
+     * 历史PV
+     */
+    private Integer totalPv;
+
+    /**
+     * 历史UV
+     */
+    private Integer totalUv;
+
+    /**
+     * 历史UIP
+     */
+    private Integer totalUip;
+
+    /**
+     * 今日PV
+     */
+    @TableField(exist = false)
+    private Integer todayPv;
+
+    /**
+     * 今日UV
+     */
+    @TableField(exist = false)
+    private Integer todayUv;
+
+    /**
+     * 今日UIP
+     */
+    @TableField(exist = false)
+    private Integer todayUip;
+
+    /**
+     * 删除时间
+     */
+    private Long delTime;
 }
