@@ -18,6 +18,12 @@ import java.util.Date;
 @AllArgsConstructor
 @Builder
 public class ShortLinkCreateReqDTO {
+
+    /**
+     * 协议
+     */
+    private String domainProtocol;
+
     /**
      * 域名
      */
