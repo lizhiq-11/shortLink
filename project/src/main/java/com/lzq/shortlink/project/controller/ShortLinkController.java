@@ -5,6 +5,7 @@ import com.lzq.shortlink.project.common.convention.result.Result;
 import com.lzq.shortlink.project.common.convention.result.Results;
 import com.lzq.shortlink.project.dto.req.ShortLinkCreateReqDTO;
 import com.lzq.shortlink.project.dto.req.ShortLinkPageReqDTO;
+import com.lzq.shortlink.project.dto.req.ShortLinkUpdateReqDTO;
 import com.lzq.shortlink.project.dto.resp.ShortLinkCreateRespDTO;
 import com.lzq.shortlink.project.dto.resp.ShortLinkGroupCountQueryRespDTO;
 import com.lzq.shortlink.project.dto.resp.ShortLinkPageRespDTO;
@@ -29,6 +30,11 @@ public class ShortLinkController {
         return Results.success(null);
     }
 
+    @PutMapping("/api/short-link/v1/uodate")
+    public Result<Void> updateShortLink(@RequestBody ShortLinkUpdateReqDTO requestParam){
+        shortLinkService.updateShortLink(requestParam);
+        return Results.success();
+    }
     /**
      * 分页查询短链接
      */
