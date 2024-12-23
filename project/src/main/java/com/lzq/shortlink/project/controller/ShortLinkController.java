@@ -24,17 +24,24 @@ public class ShortLinkController {
 
     private  final ShortLinkService shortLinkService;
 
+    /**
+     * 创建短链接
+     */
     @PostMapping("/api/short-link/v1/create")
     public Result<ShortLinkCreateRespDTO> create(@RequestBody ShortLinkCreateReqDTO requestParam){
         shortLinkService.createShortLink(requestParam);
         return Results.success(null);
     }
 
-    @PutMapping("/api/short-link/v1/uodate")
+    /**
+     * 修改短链接
+     */
+    @PutMapping("/api/short-link/v1/update")
     public Result<Void> updateShortLink(@RequestBody ShortLinkUpdateReqDTO requestParam){
         shortLinkService.updateShortLink(requestParam);
         return Results.success();
     }
+
     /**
      * 分页查询短链接
      */
