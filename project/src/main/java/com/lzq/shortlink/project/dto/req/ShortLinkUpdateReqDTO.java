@@ -29,7 +29,7 @@ public class ShortLinkUpdateReqDTO {
     /**
      * 原始分组标识
      */
-    private String OriginGid;
+    private String Origingid;
 
     /**
      * 有效期类型 0：永久有效 1：自定义
