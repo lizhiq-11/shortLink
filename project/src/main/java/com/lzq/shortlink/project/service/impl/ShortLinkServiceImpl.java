@@ -173,6 +173,8 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
         String serverName = request.getServerName();
         String fullShortUrl = serverName + "/" + shortUri;
         //首先从 Redis 缓存中获取原始链接：
+        //双重检查redis
+        // 1.加分布式锁防止缓存击穿  2.当未查询到数据时，再次查询，保证第一个拿到锁的请求进行一次缓存重构
         String originalLink = stringRedisTemplate.opsForValue().get(String.format(GOTO_SHORT_LINK_KEY, fullShortUrl));
         if (StrUtil.isNotBlank(originalLink)) {
             ((HttpServletResponse) response).sendRedirect(originalLink);
