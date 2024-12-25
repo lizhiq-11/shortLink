@@ -185,7 +185,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
         if (!contains) {
             return;
         }
-        //判断请求k是否存在空值，如果存在则说明已被缓存空值，直接返回空，如果不存在则请求数据库，看看数据库是否存在
+        //判断缓存中的请求k是否存在空值，如果存在则说明已被缓存空值，直接返回空，如果不存在则请求数据库，看看数据库是否存在
         String gotoIsNullShortLink = stringRedisTemplate.opsForValue().get(String.format(GOTO_IS_NULL_SHORT_LINK_KEY, fullShortUrl));
         if (StrUtil.isNotBlank(gotoIsNullShortLink)) {
             return;
@@ -198,6 +198,13 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
             originalLink = stringRedisTemplate.opsForValue().get(String.format(GOTO_SHORT_LINK_KEY, fullShortUrl));
             if (StrUtil.isNotBlank(originalLink)) {
                 ((HttpServletResponse) response).sendRedirect(originalLink);
+                return;
+            }
+            //当大量请求并发来到加锁的前一步，这时他们只要拿到锁就会再走一遍接下来的流程，不管你是否已经缓存空值，
+            //所以应在这里添加空缓存的查询逻辑，与缓存击穿类似
+            gotoIsNullShortLink = stringRedisTemplate.opsForValue().get(String.format(GOTO_IS_NULL_SHORT_LINK_KEY, fullShortUrl));
+            if (StrUtil.isNotBlank(gotoIsNullShortLink)) {
+                ((HttpServletResponse) response).sendRedirect("/page/notfound");
                 return;
             }
             //如果在 Redis 中仍然没有找到数据，就从数据库中查询：
