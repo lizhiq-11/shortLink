@@ -29,7 +29,7 @@ import com.lzq.shortlink.project.dto.resp.ShortLinkGroupCountQueryRespDTO;
 import com.lzq.shortlink.project.dto.resp.ShortLinkPageRespDTO;
 import com.lzq.shortlink.project.service.ShortLinkService;
 import com.lzq.shortlink.project.toolkit.HashUtil;
-import com.lzq.shortlink.project.util.LinkUtil;
+import com.lzq.shortlink.project.toolkit.LinkUtil;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.http.Cookie;

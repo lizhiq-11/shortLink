@@ -1,4 +1,4 @@
-package com.lzq.shortlink.project.util;
+package com.lzq.shortlink.project.toolkit;
 
 import cn.hutool.core.date.DateUnit;
 import cn.hutool.core.date.DateUtil;

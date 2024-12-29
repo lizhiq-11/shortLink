@@ -1,6 +1,5 @@
 package com.lzq.shortlink.project.dao.mapper;
 
-
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.lzq.shortlink.project.dao.entity.ShortLinkGotoDO;
 
