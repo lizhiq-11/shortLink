@@ -12,6 +12,7 @@ import java.util.List;
  * 短链接分组接口层
  */
 public interface GroupService extends IService<GroupDO> {
+
     /**
      * 新增短链接分组
      *
@@ -26,7 +27,6 @@ public interface GroupService extends IService<GroupDO> {
      * @param groupName 短链接分组名
      */
     void saveGroup(String username, String groupName);
-
 
     /**
      * 查询用户短链接分组集合

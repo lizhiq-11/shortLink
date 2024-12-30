@@ -1,6 +1,5 @@
 package com.lzq.shortlink.admin.common.biz.user;
 
-
 import com.alibaba.ttl.TransmittableThreadLocal;
 
 import java.util.Optional;
@@ -11,7 +10,7 @@ import java.util.Optional;
 public final class UserContext {
 
     /**
-     * 线程安全的线程池TransmittableThreadLocal：<a href="https://github.com/alibaba/transmittable-thread-local" />
+     * <a href="https://github.com/alibaba/transmittable-thread-local" />
      */
     private static final ThreadLocal<UserInfoDTO> USER_THREAD_LOCAL = new TransmittableThreadLocal<>();
 

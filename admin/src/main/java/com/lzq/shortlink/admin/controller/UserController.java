@@ -3,7 +3,6 @@ package com.lzq.shortlink.admin.controller;
 import cn.hutool.core.bean.BeanUtil;
 import com.lzq.shortlink.admin.common.convention.result.Result;
 import com.lzq.shortlink.admin.common.convention.result.Results;
-import com.lzq.shortlink.admin.common.enums.UserErrorCodeEnum;
 import com.lzq.shortlink.admin.dto.req.UserLoginReqDTO;
 import com.lzq.shortlink.admin.dto.req.UserRegisterReqDTO;
 import com.lzq.shortlink.admin.dto.req.UserUpdateReqDTO;
@@ -12,29 +11,30 @@ import com.lzq.shortlink.admin.dto.resp.UserLoginRespDTO;
 import com.lzq.shortlink.admin.dto.resp.UserRespDTO;
 import com.lzq.shortlink.admin.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @Author lzq
- * @Description
- * @DATE 2024/12/17下午2:00
+ * 用户管理控制层
  */
 @RestController
 @RequiredArgsConstructor
 public class UserController {
 
     private final UserService userService;
+
     /**
-     *根据用户名查询用户信息
+     * 根据用户名查询用户信息
      */
     @GetMapping("/api/short-link/admin/v1/user/{username}")
-    public Result<UserRespDTO> getUserByUsername(@PathVariable("username") String username){
-        UserRespDTO result = userService.getUserByUsername(username);
-        if(result == null){
-            return new Result<UserRespDTO>().setCode(UserErrorCodeEnum.USER_NULL.code()).setMessage(UserErrorCodeEnum.USER_NULL.message());
-        }else{
-            return Results.success(result);
-        }
+    public Result<UserRespDTO> getUserByUsername(@PathVariable("username") String username) {
+        return Results.success(userService.getUserByUsername(username));
     }
 
     /**
@@ -57,7 +57,7 @@ public class UserController {
      * 注册用户
      */
     @PostMapping("/api/short-link/admin/v1/user")
-    public Result<Void> register(@RequestBody UserRegisterReqDTO requestParam){
+    public Result<Void> register(@RequestBody UserRegisterReqDTO requestParam) {
         userService.register(requestParam);
         return Results.success();
     }
@@ -66,7 +66,7 @@ public class UserController {
      * 修改用户
      */
     @PutMapping("/api/short-link/admin/v1/user")
-    public Result<Void> update(@RequestBody UserUpdateReqDTO requestParam){
+    public Result<Void> update(@RequestBody UserUpdateReqDTO requestParam) {
         userService.update(requestParam);
         return Results.success();
     }

@@ -5,9 +5,7 @@ import com.lzq.shortlink.admin.common.database.BaseDO;
 import lombok.Data;
 
 /**
- * @Author lzq
- * @Description
- * @DATE 2024/12/17下午2:58
+ * 用户持久层实体
  */
 @Data
 @TableName("t_user")

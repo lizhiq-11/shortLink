@@ -5,14 +5,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * 用户登录返回响应
+ * 用户登录接口返回响应
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserLoginRespDTO {
+
     /**
-     * 用户token
+     * 用户Token
      */
-    String token;
+    private String token;
 }

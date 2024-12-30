@@ -3,10 +3,11 @@ package com.lzq.shortlink.admin.dto.req;
 import lombok.Data;
 
 /**
- * 用户修改入参请求
+ * 用户注册请求参数
  */
 @Data
 public class UserUpdateReqDTO {
+
     /**
      * 用户名
      */

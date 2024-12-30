@@ -5,27 +5,24 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 /**
- * 短链接创建响应对象
+ * 短链接批量创建响应对象
  */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ShortLinkCreateRespDTO {
+public class ShortLinkBatchCreateRespDTO {
 
     /**
-     * 分组信息
+     * 成功数量
      */
-    private String gid;
+    private Integer total;
 
     /**
-     * 原始链接
+     * 批量创建返回参数
      */
-    private String originUrl;
-
-    /**
-     * 短链接
-     */
-    private String fullShortUrl;
+    private List<ShortLinkBaseInfoRespDTO> baseLinkInfos;
 }

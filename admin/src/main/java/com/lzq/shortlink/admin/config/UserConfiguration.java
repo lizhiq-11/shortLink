@@ -1,10 +1,12 @@
 package com.lzq.shortlink.admin.config;
 
-
+import com.lzq.shortlink.admin.common.biz.user.UserFlowRiskControlFilter;
 import com.lzq.shortlink.admin.common.biz.user.UserTransmitFilter;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.core.StringRedisTemplate;
 
 /**
  * 用户配置自动装配
@@ -24,18 +26,18 @@ public class UserConfiguration {
         return registration;
     }
 
-//    /**
-//     * 用户操作流量风控过滤器
-//     */
-//    @Bean
-//    @ConditionalOnProperty(name = "short-link.flow-limit.enable", havingValue = "true")
-//    public FilterRegistrationBean<UserFlowRiskControlFilter> globalUserFlowRiskControlFilter(
-//            StringRedisTemplate stringRedisTemplate,
-//            UserFlowRiskControlConfiguration userFlowRiskControlConfiguration) {
-//        FilterRegistrationBean<UserFlowRiskControlFilter> registration = new FilterRegistrationBean<>();
-//        registration.setFilter(new UserFlowRiskControlFilter(stringRedisTemplate, userFlowRiskControlConfiguration));
-//        registration.addUrlPatterns("/*");
-//        registration.setOrder(10);
-//        return registration;
-//    }
+    /**
+     * 用户操作流量风控过滤器
+     */
+    @Bean
+    @ConditionalOnProperty(name = "short-link.flow-limit.enable", havingValue = "true")
+    public FilterRegistrationBean<UserFlowRiskControlFilter> globalUserFlowRiskControlFilter(
+            StringRedisTemplate stringRedisTemplate,
+            UserFlowRiskControlConfiguration userFlowRiskControlConfiguration) {
+        FilterRegistrationBean<UserFlowRiskControlFilter> registration = new FilterRegistrationBean<>();
+        registration.setFilter(new UserFlowRiskControlFilter(stringRedisTemplate, userFlowRiskControlConfiguration));
+        registration.addUrlPatterns("/*");
+        registration.setOrder(10);
+        return registration;
+    }
 }

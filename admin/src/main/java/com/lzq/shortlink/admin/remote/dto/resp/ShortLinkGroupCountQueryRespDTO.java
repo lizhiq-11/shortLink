@@ -1,6 +1,5 @@
 package com.lzq.shortlink.admin.remote.dto.resp;
 
-
 import lombok.Data;
 
 /**

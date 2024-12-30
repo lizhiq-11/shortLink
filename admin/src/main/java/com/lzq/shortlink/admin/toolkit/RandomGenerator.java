@@ -34,4 +34,3 @@ public final class RandomGenerator {
         return sb.toString();
     }
 }
-

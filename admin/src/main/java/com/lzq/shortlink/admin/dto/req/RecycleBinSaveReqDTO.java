@@ -1,12 +1,12 @@
-package com.lzq.shortlink.admin.remote.dto.req;
+package com.lzq.shortlink.admin.dto.req;
 
 import lombok.Data;
 
 /**
- * 回收站移除功能
+ * 回收站保存功能
  */
 @Data
-public class RecycleBinRemoveReqDTO {
+public class RecycleBinSaveReqDTO {
 
     /**
      * 分组标识

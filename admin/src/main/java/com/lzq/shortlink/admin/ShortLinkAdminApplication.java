@@ -3,16 +3,19 @@ package com.lzq.shortlink.admin;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
- * @Author lzq
- * @Description
- * @DATE 2024/12/17下午12:47
+ * 短链接后管应用
  */
 @SpringBootApplication
+@EnableDiscoveryClient
+@EnableFeignClients("com.lzq.shortlink.admin.remote")
 @MapperScan("com.lzq.shortlink.admin.dao.mapper")
 public class ShortLinkAdminApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(ShortLinkAdminApplication.class,args);
+        SpringApplication.run(ShortLinkAdminApplication.class, args);
     }
 }
