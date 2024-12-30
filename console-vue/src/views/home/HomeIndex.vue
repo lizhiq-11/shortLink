@@ -3,35 +3,35 @@
     <el-container>
       <el-header height="54px" style="padding: 0">
         <div class="header">
-          <div @click="toMySpace" class="logo">拿个offer-SaaS短链接@lzq</div>
+          <div @click="toMySpace" class="logo">星辰star-SaaS短链接@lzq-star</div>
           <div style="display: flex; align-items: center">
             <a
               class="link-span"
               style="text-decoration: none"
               target="_blank"
-              href="https://nageoffer.com/shortlink/"
-              >官方文档</a
+              href="https://www.yuque.com/lizhiq/sgg8lg/rp73wefyrz6ugaf6"
+              >技术文档</a
             >
             <a
               class="link-span"
               style="text-decoration: none"
               target="_blank"
-              href="https://nageoffer.com/planet/group/"
-              >加沟通群</a
+              href="https://spring.io/projects/spring-boot"
+              >技术支持</a
             >
             <a
                 class="link-span"
                 style="text-decoration: none"
                 target="_blank"
-                href="https://nageoffer.com/shortlink/video/"
-            >🔥视频教程</a
+                href="https://kimi.moonshot.cn/?utm_campaign=TR_90K51izQ&utm_content=&utm_medium=%E7%BA%BF%E4%B8%8ACPA&utm_source=CH_AwqiWw8L&utm_term="
+            >技术扩展</a
             >
             <a
                 class="link-span"
                 style="text-decoration: none"
                 target="_blank"
-                href="http://shortlink.nageoffer.com"
-            >演示环境</a
+                href="https://bgithub.xyz/lizhiq-11"
+            >🔥开源地址</a
             >
             <el-dropdown>
               <div class="block">
