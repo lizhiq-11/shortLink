@@ -1,10 +1,11 @@
 package com.lzq.shortlink.project.common.web;
+
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;
-import com.lzq.shortlink.admin.common.convention.errorcode.BaseErrorCode;
-import com.lzq.shortlink.admin.common.convention.exception.AbstractException;
-import com.lzq.shortlink.admin.common.convention.result.Result;
-import com.lzq.shortlink.admin.common.convention.result.Results;
+import com.lzq.shortlink.project.common.convention.errorcode.BaseErrorCode;
+import com.lzq.shortlink.project.common.convention.exception.AbstractException;
+import com.lzq.shortlink.project.common.convention.result.Result;
+import com.lzq.shortlink.project.common.convention.result.Results;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -20,7 +21,6 @@ import java.util.Optional;
 
 /**
  * 全局异常处理器
- *
  */
 @Component
 @Slf4j

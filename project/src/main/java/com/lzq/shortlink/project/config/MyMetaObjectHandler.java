@@ -2,7 +2,6 @@ package com.lzq.shortlink.project.config;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -10,8 +9,7 @@ import java.util.Date;
 /**
  * MyBatis-Plus 原数据自动填充类
  */
-@Primary
-@Component(value = "myMetaObjectHandlerByAdmin")
+@Component
 public class MyMetaObjectHandler implements MetaObjectHandler {
 
     @Override

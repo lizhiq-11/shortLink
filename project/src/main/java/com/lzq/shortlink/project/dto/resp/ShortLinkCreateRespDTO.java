@@ -6,15 +6,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * 短链接创建信息响应对象
+ * 短链接创建响应对象
  */
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class ShortLinkCreateRespDTO {
+
     /**
-     /**
      * 分组信息
      */
     private String gid;

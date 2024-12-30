@@ -2,6 +2,7 @@ package com.lzq.shortlink.project.common.convention.exception;
 
 import com.lzq.shortlink.project.common.convention.errorcode.BaseErrorCode;
 import com.lzq.shortlink.project.common.convention.errorcode.IErrorCode;
+
 /**
  * 客户端异常
  */

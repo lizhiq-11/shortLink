@@ -1,6 +1,5 @@
 package com.lzq.shortlink.project.dao.entity;
 
-
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.lzq.shortlink.project.common.database.BaseDO;
 import lombok.AllArgsConstructor;
@@ -29,11 +28,6 @@ public class LinkAccessStatsDO extends BaseDO {
      * 完整短链接
      */
     private String fullShortUrl;
-
-    /**
-     * 分组标识
-     */
-    private String gid;
 
     /**
      * 日期

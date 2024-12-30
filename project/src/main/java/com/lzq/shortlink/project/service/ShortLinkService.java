@@ -3,9 +3,12 @@ package com.lzq.shortlink.project.service;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.lzq.shortlink.project.dao.entity.ShortLinkDO;
+import com.lzq.shortlink.project.dto.biz.ShortLinkStatsRecordDTO;
+import com.lzq.shortlink.project.dto.req.ShortLinkBatchCreateReqDTO;
 import com.lzq.shortlink.project.dto.req.ShortLinkCreateReqDTO;
 import com.lzq.shortlink.project.dto.req.ShortLinkPageReqDTO;
 import com.lzq.shortlink.project.dto.req.ShortLinkUpdateReqDTO;
+import com.lzq.shortlink.project.dto.resp.ShortLinkBatchCreateRespDTO;
 import com.lzq.shortlink.project.dto.resp.ShortLinkCreateRespDTO;
 import com.lzq.shortlink.project.dto.resp.ShortLinkGroupCountQueryRespDTO;
 import com.lzq.shortlink.project.dto.resp.ShortLinkPageRespDTO;
@@ -26,6 +29,22 @@ public interface ShortLinkService extends IService<ShortLinkDO> {
      * @return 短链接创建信息
      */
     ShortLinkCreateRespDTO createShortLink(ShortLinkCreateReqDTO requestParam);
+
+    /**
+     * 根据分布式锁创建短链接
+     *
+     * @param requestParam 创建短链接请求参数
+     * @return 短链接创建信息
+     */
+    ShortLinkCreateRespDTO createShortLinkByLock(ShortLinkCreateReqDTO requestParam);
+
+    /**
+     * 批量创建短链接
+     *
+     * @param requestParam 批量创建短链接请求参数
+     * @return 批量创建短链接返回参数
+     */
+    ShortLinkBatchCreateRespDTO batchCreateShortLink(ShortLinkBatchCreateReqDTO requestParam);
 
     /**
      * 修改短链接
@@ -58,4 +77,11 @@ public interface ShortLinkService extends IService<ShortLinkDO> {
      * @param response HTTP 响应
      */
     void restoreUrl(String shortUri, ServletRequest request, ServletResponse response);
+
+    /**
+     * 短链接统计
+     *
+     * @param shortLinkStatsRecord 短链接统计实体参数
+     */
+    void shortLinkStats(ShortLinkStatsRecordDTO shortLinkStatsRecord);
 }

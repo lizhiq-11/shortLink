@@ -9,19 +9,13 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 /**
- * @Author lzq
- * @Description
- * @DATE 2024/12/20下午2:16
+ * 短链接创建请求对象
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class ShortLinkCreateReqDTO {
-    /**
-     * 协议
-     */
-    private String domainProtocol;
 
     /**
      * 域名

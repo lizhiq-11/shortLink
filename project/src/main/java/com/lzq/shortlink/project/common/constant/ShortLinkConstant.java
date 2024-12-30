@@ -10,7 +10,6 @@ public class ShortLinkConstant {
      */
     public static final long DEFAULT_CACHE_VALID_TIME = 2626560000L;
 
-
     /**
      * 高德获取地区接口地址
      */

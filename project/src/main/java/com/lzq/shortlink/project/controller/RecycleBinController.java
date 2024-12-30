@@ -1,6 +1,5 @@
 package com.lzq.shortlink.project.controller;
 
-
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.lzq.shortlink.project.common.convention.result.Result;
 import com.lzq.shortlink.project.common.convention.result.Results;
